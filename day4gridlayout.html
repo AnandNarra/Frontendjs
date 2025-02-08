@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Grid Practice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./day4gridlayout.css">
+</head>
+<!--Create these sections:
+
+1. Header (Full Width)
++------------------+
+|     Col-12       |
++------------------+
+
+2. Department Info
++--------+---------+
+| About  | Notice  |
+| Col-8  | Col-4   |
++--------+---------+
+
+3. Faculty Profiles
++----+----+----+
+| C4 | C4 | C4 |
++----+----+----+
+
+4. Course Information
++-----+-----+-----+
+| C6  | C6  | Full Row Courses
++-----+-----+
+| Col-12    | Course Details
++-----------+
+
+
+
+-->
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <div>
+                        <img src="data:image/jpeg;base64,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"
+                            class="avanthi-logo" alt="College logo">
+                    </div>
+                </a>
+                <h2 class="navbar-heading">Avanthi Institute of Engineering & Technology </h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                    <div class="navbar-nav nav-bar-links">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">Disabled</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="department-heading">Department Info</h3>
+                </div>
+                <div class="col-8">
+                    <div class="section-about-card">
+                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="photo" class=" section-about-card-image">
+
+                        <div class="pt-3">
+                            <h5>About CSE Department</h5>
+                            <p>A Computer Science and Engineering (CSE) department is an academic program that combines
+                                computer science and computer engineering. CSE departments offer undergraduate,
+                                postgraduate, and doctoral programs. </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-4">
+                    <div class="section-about-card">
+                        <h4>Notifications :-</h4>
+                        <ul>
+                            <li>Time Table</li>
+                            <li>internship Last Date</li>
+                            <li>Sports Ment</li>
+                            <li>Internal Marks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="section-cars-2">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="department-heading">Faculty Profiles</h3>
+                </div>
+                <div class="col-2">
+                    <div class="customFristCard">
+                        <img src="./photo/WhatsApp Image 2024-11-30 at 21.05.39_b7063c85.jpg" alt="Photo">
+                        <div class="customFristCardMatter">
+                            <h6><strong>Name:- Anand</strong></h6>
+                            <p>Designation:- <strong>HOD</strong></p>
+                            <ol><strong>Contact info:-</strong>
+                                <li>phone No:-9874563210</li>
+                                <li>College:-Avanthi</li>
+                                <li>Address:-Dilshuknagar</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="customFristCard">
+                        <img src="./photo/madhu.jpg" alt="Photo">
+                        <div class="customFristCardMatter">
+                            <h6><strong>Name:- Madhu</strong></h6>
+                            <p>Designation:- <strong>HOD</strong></p>
+                            <ol><strong>Contact info:-</strong>
+                                <li>phone No:-9874563210</li>
+                                <li>College:-Avanthi</li>
+                                <li>Address:-Dilshuknagar</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="customFristCard">
+                        <img src="./photo/praveen.jpg" alt="Photo">
+                        <div class="customFristCardMatter">
+                            <h6><strong>Name:- Praveen</strong></h6>
+                            <p>Designation:- <strong>HOD</strong></p>
+                            <ol><strong>Contact info:-</strong>
+                                <li>phone No:-9874563210</li>
+                                <li>College:-Avanthi</li>
+                                <li>Address:-Dilshuknagar</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="customFristCard">
+                        <img src="./photo/vishnu1.jpg" alt="Photo">
+                        <div class="customFristCardMatter">
+                            <h6><strong>Name:- Vishnu</strong></h6>
+                            <p>Designation:- <strong>Incharge</strong></p>
+                            <ol><strong>Contact info:-</strong>
+                                <li>phone No:-9874563210</li>
+                                <li>College:-Avanthi</li>
+                                <li>Address:-Dilshuknagar</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="customFristCard">
+                        <img src="./photo/WhatsApp Image 2024-12-03 at 00.21.22_7a73f400.jpg" alt="Photo">
+                        <div class="customFristCardMatter">
+                            <h6><strong>Name:- Anand</strong></h6>
+                            <p>Designation:- <strong>HOD</strong></p>
+                            <ol><strong>Contact info:-</strong>
+                                <li>phone No:-9874563210</li>
+                                <li>College:-Avanthi</li>
+                                <li>Address:-Dilshuknagar</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

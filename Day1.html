@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cse Department</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+</head>
+
+<style>
+    header {
+        background-color: #333;
+        height: 15vh;
+    }
+
+    header img {
+        width: 100%;
+        height: 100px;
+
+    }
+
+    header h1 {
+        text-align: center;
+        color: #ccc;
+        padding-left: center;
+        margin-top: 25px;
+        margin-left: 60px;
+    }
+
+    header ul {
+        list-style: none;
+    }
+
+    header li {
+
+        display: inline;
+
+    }
+
+    header a {
+        text-decoration: none;
+        color: whitesmoke;
+        margin: 10px;
+
+
+    }
+
+    header nav {
+        padding-top: 30px;
+        margin-left: 50px;
+        margin-top: 15px;
+    }
+
+
+    section {
+        background-color: lightgray;
+    }
+
+    img {
+        width: 100%;
+        height: 50vh;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .events {
+        background-color: grey;
+        padding: 20px;
+    }
+
+    .technical-events {
+
+        width: 100%;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+    }
+
+    /*Registration from*/
+    .registration-form {
+        background-color: lightgrey;
+        margin: 20px;
+        border-radius: 10px;
+        padding: 20px;
+
+    }
+
+    .registration-form label {
+        width: 100%;
+    }
+
+    .registration-form input,
+    .registration-form select {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .registration-form button {
+        background-color: gray;
+        width: 100%;
+        color: #fff;
+        border-width: 0px;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .registration-form button:hover {
+        background-color: whitesmoke;
+        color: black;
+    }
+
+    /*Footer section*/
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    footer p {
+
+        font-size: 14px;
+    }
+</style>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="./photo/Avanthi logo.webp" alt="avanthi logo">
+                </div>
+                <div class="col-6">
+                    <h1>Avanthi Cse Department</h1>
+                </div>
+                <div class="col-4">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!-- Events Photos Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 "><img src="./photo/hacker.jpeg"
+                        alt="events 1"></div>
+                <div class="col-12 col-md-4"><img src="./photo/cricket.jpg"
+                        alt="events 2">
+                </div>
+                <div class="col-12 col-md-4"><img src="./photo/hackathon.png" alt="events 3"></div>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <!-- Events Section -->
+    <section class="events d-flex flex-row">
+        <div class="technical-events">
+            <h2>Technical Events</h2>
+            <ul>
+                <li>Coding Competition</li>
+                <li>Robotics Workshop</li>
+                <li>Hackathon</li>
+            </ul>
+        </div>
+        <div class="technical-events">
+            <h2>Sports Events</h2>
+            <ul>
+                <li>Cricket Tournament</li>
+                <li>Football Match</li>
+                <li>Badminton Championship</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="registration-form">
+        <h2>Event Registration</h2>
+        <form>
+            <label for="name">Student Name:</label>
+            <input type="text" id="name">
+            <label for="class">Class/Branch:</label>
+            <input type="text" id="class">
+
+            <label for="event">Select Event:</label>
+            <select id="event" name="event" required>
+                <option value="">--Choose an Event--</option>
+                <option value="coding">Coding Competition</option>
+                <option value="robotics">Robotics Workshop</option>
+                <option value="hackathon">Hackathon</option>
+                <option value="cricket">Cricket Tournament</option>
+                <option value="football">Football Match</option>
+                <option value="badminton">Badminton Championship</option>
+            </select>
+            <button>Sumbit</button>
+        </form>
+    </section>
+    <!--Footer Section-->
+    <footer>
+        <p>&copy; 2025 Department of Computer Science. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
